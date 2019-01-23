@@ -13,7 +13,7 @@ teams = Team.create([
   {name: 'HMCTS'}])
 
 users = User.create([
-  {name: 'Stephen Richards', email: 'stephen@stephenrirchards.eu', team: teams.first},
+  {name: 'Stephen Richards', email: 'stephen@stephenrichards.eu', team: teams.first},
   {name: 'Larry Adler', email: 'larry.adler@stephenrirchards.eu', team: teams.first},
   {name: 'Lance Armstrong', email: 'lance@stephenrirchards.eu', team: teams.first},
   {name: 'Charles Dickens', email: 'charles@stephenrirchards.eu', team: teams[1]},
