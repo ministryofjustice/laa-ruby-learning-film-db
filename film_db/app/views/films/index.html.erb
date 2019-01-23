@@ -1,0 +1,19 @@
+<h1>Films and their taglines</h1>
+
+
+<table>
+  <tr>
+    <th>Film</th>
+    <th>Tagline</th>
+    <th>User</th>
+    <th>Team</th>
+  </tr>
+  <% @films.each do |film| %>
+    <tr>
+      <td><%= film.title %></td>
+      <td><%= film.tagline %></td>
+      <td><%= film.user.name %></td>
+      <td><%= film.user.team.name %></td>
+    </tr>
+  <% end %>
+</table>
