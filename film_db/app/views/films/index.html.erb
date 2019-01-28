@@ -10,7 +10,7 @@
   </tr>
   <% @films.each do |film| %>
     <tr>
-      <td><%= film.title %></td>
+      <td><%= link_to film.title, edit_film_path(film) %></td>
       <td><%= film.tagline %></td>
       <td><%= film.user.name %></td>
       <td><%= film.user.team.name %></td>
