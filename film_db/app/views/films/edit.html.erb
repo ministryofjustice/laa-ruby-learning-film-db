@@ -1,0 +1,20 @@
+<h1>Edit Film <%= @film.title %></h1>
+
+
+<%= form_for @film do |f| %>
+  <table>
+    <tr>
+      <td>Title</td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+
+    <tr>
+      <td>Tagline</td>
+      <td><%= f.text_field :tagline  %></td>
+    </tr>
+
+    <tr>
+      <td><%= f.submit %></td>
+    </tr>
+  </table>
+<% end %>
