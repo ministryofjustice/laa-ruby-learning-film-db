@@ -1,17 +1,18 @@
 class FilmsController < ApplicationController
   def index
-    @films = Film.order(:title)
+    authorize Film
+    @films = policy_scope(Film)
   end
 
   def edit
-    @film = Film.find(params[:id])
+    @film = policy_scope(Film).find(params[:id])
+    authorize @film
   end
 
   def update
-    @film = Film.find(params[:id])
+    @film = policy_scope(Film).find(params[:id])
     @film.update(film_params)
     flash[:alert] = 'Film updated'
-    puts ">>>>>>>>>>  #{__FILE__}:#{__LINE__} <<<<<<<<<<"
     redirect_to films_path
   end
 
