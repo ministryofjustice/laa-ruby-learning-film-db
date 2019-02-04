@@ -7,19 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-teams = Team.create([
+teams = Team.create!([
   {name: 'Legal Aid team'},
   {name: 'Central Digital'},
   {name: 'HMCTS'}])
 
-users = User.create([
-  {name: 'Stephen Richards', email: 'stephen@stephenrichards.eu', team: teams.first},
-  {name: 'Larry Adler', email: 'larry.adler@stephenrirchards.eu', team: teams.first},
-  {name: 'Lance Armstrong', email: 'lance@stephenrirchards.eu', team: teams.first},
-  {name: 'Charles Dickens', email: 'charles@stephenrirchards.eu', team: teams[1]},
-  {name: 'Celine Dion', email: 'celine@stephenrirchards.eu', team: teams[1]},
-  {name: 'Helen Mirren', email: 'helen@stephenrirchards.eu', team: teams.last},
-  {name: 'Hayley Mills', email: 'hayley@stephenrirchards.eu', team: teams.last}])
+users = User.create!([
+  {name: 'Stephen Richards', email: 'stephen@stephenrichards.eu', password: 'password', team: teams.first},
+  {name: 'Larry Adler', email: 'larry.adler@stephenrirchards.eu', password: 'password', team: teams.first},
+  {name: 'Lance Armstrong', email: 'lance@stephenrirchards.eu', password: 'password', team: teams.first},
+  {name: 'Charles Dickens', email: 'charles@stephenrirchards.eu', password: 'password', team: teams[1]},
+  {name: 'Celine Dion', email: 'celine@stephenrirchards.eu', password: 'password', team: teams[1]},
+  {name: 'Helen Mirren', email: 'helen@stephenrirchards.eu', password: 'password', team: teams.last},
+  {name: 'Hayley Mills', email: 'hayley@stephenrirchards.eu', password: 'password', team: teams.last}])
 
 films =
   [
