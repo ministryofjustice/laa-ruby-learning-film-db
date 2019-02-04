@@ -1,5 +1,11 @@
+require "#{Rails.root}/lib/film_form_builder"
+
 class ApplicationController < ActionController::Base
   include Pundit
+
+  default_form_builder FilmFormBuilder
+
+
   protect_from_forgery with: :exception, prepend: true
   before_action :authenticate_user!
 
