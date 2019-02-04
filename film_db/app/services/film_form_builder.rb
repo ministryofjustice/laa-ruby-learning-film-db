@@ -4,7 +4,8 @@ class FilmFormBuilder < ActionView::Helpers::FormBuilder
 
   def text_field(attribute, options = {})
     content_tag(:div, class: 'govuk-form-group') do
-      label(attribute, class: 'govuk-label') + super
+      options = {class: 'govuk-!-width-one-half govuk-input', 'aria-describedby'=> ''}
+      label(attribute, class: 'govuk-label') + super(attribute, options)
     end
   end
 
