@@ -1,17 +1,85 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>FilmDb</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en" class="govuk-template">
+<head>
+  <title><%= html_title %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0c0c" />
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<!--  <link rel="shortcut icon" href="<%#= image_path('favicon.ico') %>" type="image/x-icon" />-->
+  <link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/govuk-apple-touch-icon-180x180.png" />
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/images/govuk-apple-touch-icon-167x167.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/govuk-apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png" />
+
+  <!--[if !IE 8]> <link href="/govuk-frontend/all.css" rel="stylesheet"/> <![endif]-->
+
+  <!--[if IE 8]> <link href="/govuk-frontend/all-ie8.css" rel="stylesheet" /> <![endif]-->
+
+  <!--[if lt IE 9]> <script src="/html5-shiv/html5shiv.js"></script> <![endif]-->
+
+  <meta property="og:image" content="/assets/images/govuk-opengraph-image.png" />
+</head>
+
+<body class="govuk-template__body ">
+<script>
+    document.body.className = (
+        (document.body.className)
+            ? document.body.className + ' js-enabled'
+            : 'js-enabled'
+    );
+</script>
+
+<a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+
+<%= render partial: 'layouts/header' %>
+
+<div class="govuk-width-container">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag ">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+            This is a new service – your
+            <a class="govuk-link" href="#">feedback</a>
+            will help us to improve it.
+          </span>
+    </p>
+  </div>
+
+  <%= content_for(:navigation) %>
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <% if flash[:error] %>
+      <div class="govuk-error-summary">
+        <h2 class="govuk-error-summary__title"><%= flash[:error] %></h2>
+      </div>
+    <% end %>
+    <% if flash[:notice] %>
+      <div class='govuk-warning-text'>
+        <span class='govuk-warning-text__icon' aria-hidden='true'>i</span>
+        <strong class='govuk-warning-text__text'>
+          <span class='govuk-warning-text__assistive'>Notice</span>
+          <%= flash[:notice] %>
+        </strong>
+      </div>
+    <% end %>
+
     <%= yield %>
-  </body>
+  </main>
+</div>
+
+<%= render partial: 'layouts/footer' %>
+
+<script type='text/javascript'>
+    window.GOVUKFrontend.initAll();
+</script>
+</body>
 </html>
