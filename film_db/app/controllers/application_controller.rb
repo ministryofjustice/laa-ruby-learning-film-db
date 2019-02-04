@@ -1,5 +1,3 @@
-require "#{Rails.root}/lib/film_form_builder"
-
 class ApplicationController < ActionController::Base
   include Pundit
 
