@@ -2,19 +2,15 @@
 
 
 <%= form_for @film do |f| %>
-  <table>
-    <tr>
-      <td>Title</td>
-      <td><%= f.text_field :title %></td>
-    </tr>
+  <p/>
+  Title
+  <%= f.text_field :title %>
+  <p />
 
-    <tr>
-      <td>Tagline</td>
-      <td><%= f.text_field :tagline  %></td>
-    </tr>
+  Tagline
+  <%= f.text_field :tagline  %>
 
-    <tr>
-      <td><%= f.submit %></td>
-    </tr>
-  </table>
+  <p />
+  <%= f.submit %>
+
 <% end %>
