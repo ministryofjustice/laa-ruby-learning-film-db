@@ -2,11 +2,11 @@
 
 
 <%= form_for @film do |f| %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, label: 'Film title' %>
 
   <%= f.text_field :tagline  %>
 
   <p />
-  <%= f.submit %>
+  <%= f.submit 'Update film' %>
 
 <% end %>
