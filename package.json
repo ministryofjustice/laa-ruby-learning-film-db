@@ -1,5 +1,8 @@
 {
   "name": "film_db",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "govuk-frontend": "^2.4.0",
+    "js-search": "^1.4.2"
+  }
 }
