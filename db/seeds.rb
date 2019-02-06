@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Film.delete_all
+Team.delete_all
+User.delete_all
+
 
 teams = Team.create!([
   {name: 'Legal Aid team'},
@@ -13,6 +17,7 @@ teams = Team.create!([
   {name: 'HMCTS'}])
 
 users = User.create!([
+  {name: 'John Doe', email: 'jd@moj.com', password: 'abc123', team: teams.first},
   {name: 'Stephen Richards', email: 'stephen@stephenrichards.eu', password: 'password', team: teams.first},
   {name: 'Larry Adler', email: 'larry.adler@stephenrirchards.eu', password: 'password', team: teams.first},
   {name: 'Lance Armstrong', email: 'lance@stephenrirchards.eu', password: 'password', team: teams.first},
